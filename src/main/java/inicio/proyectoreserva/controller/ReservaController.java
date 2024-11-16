@@ -2,10 +2,8 @@ package inicio.proyectoreserva.controller;
 
 import inicio.proyectoreserva.model.Habitacion;
 import inicio.proyectoreserva.model.Reserva;
-import inicio.proyectoreserva.model.Usuario;
 import inicio.proyectoreserva.service.Habitacionservice;
 import inicio.proyectoreserva.service.ReservaService;
-import inicio.proyectoreserva.service.UsuarioService;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -39,6 +37,7 @@ public class ReservaController {
         return reservaService.obtenerReservaPorUsuario(usuarioId);
     }
 
+    // listar Habitaciones libres
     public List<Habitacion> obtenerHabitacionesDisponible() throws SQLException {
         return habitacionservice.obtenerHabitacionesDisponibles();
     }

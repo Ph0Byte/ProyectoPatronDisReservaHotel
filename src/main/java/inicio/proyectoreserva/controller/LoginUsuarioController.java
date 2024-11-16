@@ -1,20 +1,20 @@
 package inicio.proyectoreserva.controller;
 
 import inicio.proyectoreserva.model.Usuario;
-import inicio.proyectoreserva.service.UsuarioService;
+import inicio.proyectoreserva.service.LoginUsuarioService;
 
 import java.sql.SQLException;
 
-public class UsuarioController {
+public class LoginUsuarioController {
 
-    private UsuarioService usuarioService;
+    private LoginUsuarioService loginUsuarioService;
 
-    public UsuarioController(){
-        usuarioService = new UsuarioService();
+    public LoginUsuarioController(){
+        loginUsuarioService = new LoginUsuarioService();
     }
 
     public Usuario autentificarUsuario(String username, String password) throws SQLException {
-        return usuarioService.autenticarUsuario(username,password);
+        return loginUsuarioService.autenticarUsuario(username,password);
     }
 
     public boolean registrarNuevoUsuario(Usuario usuario) throws SQLException {
@@ -24,6 +24,6 @@ public class UsuarioController {
                 usuario.getPassword(),
                 "Cliente"
         );
-        return usuarioService.registrarUsuario(nuevoUsuario);
+        return loginUsuarioService.registrarUsuario(nuevoUsuario);
     }
 }

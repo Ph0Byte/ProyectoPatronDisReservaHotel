@@ -6,10 +6,11 @@ import inicio.proyectoreserva.model.Usuario;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class UsuarioService {
+// funcionalidades del login
+public class LoginUsuarioService {
     private DatabaseManager databaseManager;
 
-    public UsuarioService(){
+    public LoginUsuarioService(){
         databaseManager = new DatabaseManager();
     }
 
@@ -38,5 +39,7 @@ public class UsuarioService {
                 usuario.getRol());
         return col > 0;
     }
+
+
 
 }
