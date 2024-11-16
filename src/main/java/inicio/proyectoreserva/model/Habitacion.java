@@ -2,6 +2,7 @@ package inicio.proyectoreserva.model;
 
 public class Habitacion {
     private int id;
+    private int numero_habitacion;
     private String tipo;
     private double precioPorNoche;
     private boolean disponible;
@@ -15,7 +16,32 @@ public class Habitacion {
         this.disponible = disponible;
     }
 
-    public boolean isDisponible() {
+    public Habitacion(
+            int id, int numero_habitacion, String tipo,
+            double precioPorNoche, boolean disponible) {
+        this.id = id;
+        this.numero_habitacion = numero_habitacion;
+        this.tipo = tipo;
+        this.precioPorNoche = precioPorNoche;
+        this.disponible = disponible;
+    }
+
+    public Habitacion(int id, String tipo, double precioPorNoche, boolean disponible) {
+        this.id = id;
+        this.tipo = tipo;
+        this.precioPorNoche = precioPorNoche;
+        this.disponible = disponible;
+    }
+
+    public int getNumero_habitacion() {
+        return numero_habitacion;
+    }
+
+    public void setNumero_habitacion(int numero_habitacion) {
+        this.numero_habitacion = numero_habitacion;
+    }
+
+    public boolean getDisponible() {
         return disponible;
     }
 

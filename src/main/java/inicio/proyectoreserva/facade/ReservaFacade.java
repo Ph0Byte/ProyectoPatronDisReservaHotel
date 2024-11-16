@@ -24,6 +24,8 @@ public class ReservaFacade {
         loginUsuarioController = new LoginUsuarioController();
     }
 
+    // metodo para confirmar si el usuario esta autentificado
+    // y despues poder hacer todas las operaciones  del sistema
     public boolean auntenricarUsuario(
             String username, String password) throws SQLException {
         Usuario usuario = loginUsuarioController.autentificarUsuario(username,password);
@@ -36,6 +38,7 @@ public class ReservaFacade {
         return loginUsuarioController.registrarNuevoUsuario(usuario);
     }
 
+    /* FUNCIONALIDAD PARA REGISTRAR LAS RESERVAS  */
     public boolean crearReserva(
             int usuarioId, int habitacionId, Date fechaInicio, Date fechaFin) throws SQLException {
         Reserva reserva = new Reserva(usuarioId, habitacionId, fechaInicio, fechaFin, "pendiente");
