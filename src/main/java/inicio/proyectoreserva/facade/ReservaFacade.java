@@ -1,9 +1,9 @@
 package inicio.proyectoreserva.facade;
 
 
+import inicio.proyectoreserva.controller.LoginUsuarioController;
 import inicio.proyectoreserva.controller.PagoController;
 import inicio.proyectoreserva.controller.ReservaController;
-import inicio.proyectoreserva.controller.UsuarioController;
 import inicio.proyectoreserva.model.Habitacion;
 import inicio.proyectoreserva.model.Pago;
 import inicio.proyectoreserva.model.Reserva;
@@ -16,24 +16,24 @@ import java.util.List;
 public class ReservaFacade {
     private final PagoController pagoController;
     private final ReservaController reservaController;
-    private final UsuarioController usuarioController;
+    private final LoginUsuarioController loginUsuarioController;
 
     public ReservaFacade() {
         pagoController = new PagoController();
         reservaController = new ReservaController();
-        usuarioController = new UsuarioController();
+        loginUsuarioController = new LoginUsuarioController();
     }
 
     public boolean auntenricarUsuario(
             String username, String password) throws SQLException {
-        Usuario usuario = usuarioController.autentificarUsuario(username,password);
+        Usuario usuario = loginUsuarioController.autentificarUsuario(username,password);
         return usuario != null;
     }
 
     public boolean registrarUsuario(
             String nombre, String username, String password) throws SQLException, SQLException {
         Usuario usuario = new Usuario(nombre, username, password, "Cliente");
-        return usuarioController.registrarNuevoUsuario(usuario);
+        return loginUsuarioController.registrarNuevoUsuario(usuario);
     }
 
     public boolean crearReserva(

@@ -1,7 +1,9 @@
 package inicio.proyectoreserva.controller;
 
+import inicio.proyectoreserva.controller.proxy.AdminUsuarioProxy;
 import inicio.proyectoreserva.model.Usuario;
 import inicio.proyectoreserva.service.AdminUsuarioService;
+import inicio.proyectoreserva.service.impl.IUsuarioService;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -10,10 +12,10 @@ import java.util.List;
 // agregar solo desde la pestaña de los admin
 public class AdminUsuarioController {
 
-    private AdminUsuarioService usuarioService;
+    private IUsuarioService usuarioService;
 
-    public AdminUsuarioController(){
-        usuarioService = new AdminUsuarioService();
+    public AdminUsuarioController(Usuario usuarioActual){
+        usuarioService = new AdminUsuarioProxy(new AdminUsuarioService(), usuarioActual);
     }
 
     public boolean registrarNuevoUsuario(Usuario usuario) throws SQLException {
