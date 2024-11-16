@@ -1,0 +1,43 @@
+-- CODIGO DE LA BASE DE DATOS (MYSQL )  -> pero puede ser en cualquier motor de bd 
+
+-- Crear base de datos
+CREATE DATABASE IF NOT EXISTS `reservahoteles`;
+USE `reservahoteles`;
+
+-- Tabla: usuarios
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `rol` enum('admin','usuario') NOT NULL DEFAULT 'usuario'
+);
+
+-- Tabla: habitaciones
+CREATE TABLE `habitaciones` (
+  `id` int(11) NOT NULL,
+  `numero_habitacion` int(11) NOT NULL,
+  `tipo` enum('individual','doble','suite') NOT NULL,
+  `precio` decimal(10,2) NOT NULL,
+  `disponible` tinyint(1) NOT NULL DEFAULT 1
+);
+
+-- Tabla: reservas
+CREATE TABLE `reservas` (
+  `id` int(11) NOT NULL,
+  `usuario_id` int(11) NOT NULL,
+  `habitacion_id` int(11) NOT NULL,
+  `fecha_inicio` date NOT NULL,
+  `fecha_fin` date NOT NULL,
+  `estado` enum('pendiente','confirmada','cancelada') NOT NULL DEFAULT 'pendiente'
+);
+
+-- Tabla: pagos
+CREATE TABLE `pagos` (
+  `id` int(11) NOT NULL,
+  `reserva_id` int(11) NOT NULL,
+  `fecha_pago` date NOT NULL,
+  `monto` decimal(10,2) NOT NULL,
+  `metodo_pago` enum('tarjeta_credito','tarjeta_debito','efectivo') NOT NULL
+);
+ 
