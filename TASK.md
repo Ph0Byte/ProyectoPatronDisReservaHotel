@@ -22,6 +22,7 @@ o Comportamiento:
 
 -  Agregar un buscador  (habitaciones  , reservas  -> por nombre de usuairo ) admin 
 - filtrar habitaciones (tipo , disponible , precio) X
+- CRUD habitaciones que solo admi puede hacer
 - 
 
 ---------
