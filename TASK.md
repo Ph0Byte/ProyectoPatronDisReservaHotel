@@ -8,6 +8,7 @@ Los administradores pueden ver las reservas activas y gestionar el inventario de
 o Creacionales: 
  - Singleton (gestión de conexión a la base de datos),
  - Factory (creación de objetos de reserva y usuario).
+   
 o Estructurales:
 - Facade (simplificar la interfaz de reservas),
 - Proxy (controlar el acceso de diferentes usuarios a ciertas funcionalidades).
