@@ -21,7 +21,7 @@ o Comportamiento:
 ## TAREAS PENDIENTES
 
 -  Agregar un buscador  (habitaciones  , reservas  -> por nombre de usuairo ) admin 
-- filtrar habitaciones (tipo , disponible , precio)
+- filtrar habitaciones (tipo , disponible , precio) X
 - 
 
 ---------
