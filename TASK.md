@@ -28,6 +28,9 @@ o Comportamiento:
 
 ---------
 
+REGITRO DE LAS RESERVAS  
+
+
 
 
 
