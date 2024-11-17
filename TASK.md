@@ -21,39 +21,16 @@ o Comportamiento:
 ## TAREAS PENDIENTES
 
 - CRUD de usuarios X
--  Agregar un buscador  (habitaciones  , reservas  -> por nombre de usuairo ) admin 
+-  Agregar un buscador  (habitaciones  , reservas  -> por nombre de usuairo ) admin  X
 - filtrar habitaciones (tipo , disponible , precio) X
-- CRUD habitaciones que solo admi puede hacer
+- CRUD habitaciones que solo admi puede hacer X
 - 
 
 ---------
 
 
 
-# METODOS DISPONIBLES 
 
-### AdminUsuarioController 
-- registrarNuevoUsuario
-- obtenerTodosUsuarios
-- obtenerUsuarioPorId
-- actualizarUsuario
-- eliminarUsuarioPorId
-- actualizarRolUsuario
 
-### LoginUsuarioController
-- autentificarUsuario
-- registrarNuevoUsuario
-
-### PagoController
-- registrarPago(int reservaId, double monto, Date fecha, String metodo)
-- obtenerPagosPorReserva(int reservaId)
-- obtenerTodosLosPagos
-
-### ReservaController 
--  crearReserva(Reserva reserva)
--  cancelarReserva(int reservaId)
--  obtenerReservaPorUsuario(int usuarioId)
--  obtenerHabitacionesDisponible
--  actualizarDisponibilidadHabitacion(int habitacionId, boolean disponible)
 
  
